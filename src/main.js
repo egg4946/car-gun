@@ -17,6 +17,7 @@ import { Pickups } from './pickups.js';
 import { PickupView } from './pickupView.js';
 
 const ROUND = 90;
+const GAME_URL = 'https://car-gun.egg4946.workers.dev/'; // 公開先(Cloudflare)。シェアに付ける
 const $ = id => document.getElementById(id);
 const forestMap = new URLSearchParams(location.search).get('map') === 'forest';
 const spawn = forestMap ? FOREST_START : START;
@@ -146,7 +147,7 @@ function end(reason) {
     + `<span class="stats">撃破 ${kills}　破壊 ${destroyed}　最高コンボ x${stats.maxCombo}<br>`
     + `最長ドリフト ${stats.longestDrift.toFixed(1)}秒　最長手放し ${stats.longestHandsOff.toFixed(1)}秒　最高 ${Math.round(stats.maxKmh)}km/h</span>`;
   const text = `称号「${title}」${score}点(${kills}撃破・${destroyed}破壊・最長手放し${stats.longestHandsOff.toFixed(1)}秒)。ハンドルを離して撃て！ #ドライブバイガンナー`;
-  $('share').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text);
+  $('share').href = 'https://twitter.com/intent/tweet?text=' + encodeURIComponent(text) + '&url=' + encodeURIComponent(GAME_URL);
   $('share').classList.remove('hidden');
   $('start').textContent = 'RETRY';
   $('screen').classList.remove('hidden');
