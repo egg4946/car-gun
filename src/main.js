@@ -8,7 +8,6 @@ import { Effects } from './effects.js';
 import { Sound } from './audio.js';
 import { Weapon } from './weapon.js';
 import { Combo } from './ai.js';
-import { lineOfSight } from './geom.js';
 import { judgeKill, Stats, titleFor } from './style.js';
 import { Wanted, HEAT } from './wanted.js';
 import { Focus } from './focus.js';
@@ -67,6 +66,10 @@ let wanted = new Wanted();
 let focus = new Focus(), focusWant = false;
 let hitstop = 0, heartTimer = 0, nitroTimer = 0, timeFlash = 0;
 let hintIdx = 0, hintTime = 0, tutorialDone = false;
+let flashCd = 0;
+let hadLock = false, lockLost = false;
+let reduceFx = false;
+try { reduceFx = localStorage.getItem('driveby-reducefx') === '1'; } catch {}
 
 const keyMap = {
   KeyW: 'up', ArrowUp: 'up', KeyS: 'down', ArrowDown: 'down',
@@ -83,6 +86,8 @@ addEventListener('keyup', e => { if (keyMap[e.code]) input[keyMap[e.code]] = fal
 addEventListener('mousemove', e => { if (state === 'play') car.look(e.movementX, e.movementY); });
 addEventListener('mousedown', e => {
   if (state !== 'play') return;
+  // Esc でロックを外した後の最初のクリックは、射撃せずロックし直す
+  if (lockLost && !document.pointerLockElement) { lockPointer(); return; }
   // 右クリック長押しで集中(スロー)、それ以外は射撃
   if (e.button === 2) focusWant = true;
   else firing = true;
@@ -104,6 +109,20 @@ addEventListener('resize', () => {
 function lockPointer() {
   try { renderer.domElement.requestPointerLock()?.catch?.(() => {}); } catch {}
 }
+document.addEventListener('pointerlockchange', () => {
+  if (document.pointerLockElement) { hadLock = true; lockLost = false; }
+  else if (hadLock) lockLost = true;
+});
+document.addEventListener('pointerlockerror', () => { hadLock = false; lockLost = false; });
+
+const fxToggle = $('reducefx');
+if (fxToggle) {
+  fxToggle.checked = reduceFx;
+  fxToggle.addEventListener('change', () => {
+    reduceFx = fxToggle.checked;
+    try { localStorage.setItem('driveby-reducefx', reduceFx ? '1' : '0'); } catch {}
+  });
+}
 
 function start() {
   score = 0; hp = 100; timeLeft = ROUND; elapsed = 0; kills = 0; destroyed = 0;
@@ -121,7 +140,9 @@ function start() {
   hitstop = heartTimer = nitroTimer = 0;
   hintIdx = hintTime = 0;
   combo.multiplier = 1; combo.timer = 0;
+  car.view = 'cockpit';
   state = 'play';
+  document.body.classList.add('playing');
   sound.init();
   sound.startMusic();
   $('screen').classList.add('hidden');
@@ -133,6 +154,8 @@ function end(reason) {
   firing = false;
   focusWant = false;
   tutorialDone = true;
+  document.body.classList.remove('playing');
+  car.view = 'chase';
   sound.stopMusic();
   $('hint').className = '';
   document.exitPointerLock?.();
@@ -179,38 +202,53 @@ function shoot() {
   _dir.z += (Math.random() - 0.5) * 2 * spread;
   _dir.normalize();
   car.camera.getWorldPosition(_from);
+  const fx = car.fire();
+  sound.gunshot();
+  if (fx.eject) effects.ejectShell(fx.eject, fx.shellVel);
   ray.set(_from, _dir);
-  // ビルの向こうの敵・物には当たらない
-  const losBoxes = world.losBoxes ?? world.boxes;
-  const visible = (x, z) => lineOfSight(losBoxes, _from.x, _from.z, x, z);
+
+  // 建物・地面・木のどこで止まるか。小物は destructibles が別に判定する。
+  const wh = world.raycast ? world.raycast(_from, _dir, ray.far) : null;
+  const limit = wh ? wh.t : ray.far;
   const targets = traffic ? [...enemies.hitMeshes, ...traffic.hitMeshes] : enemies.hitMeshes;
-  let hit = ray.intersectObjects(targets, false).find(h => visible(h.point.x, h.point.z));
+  const hit = ray.intersectObjects(targets, false).find(h => h.distance <= limit);
   // 手前に小物(街灯・自販機・ドラム缶など)があればそちらに当たる
-  const ph = destructibles.raycast(_from, _dir, hit ? hit.distance : ray.far);
-  let propHit = null;
-  if (ph) {
-    const pt = _from.clone().addScaledVector(_dir, ph.t);
-    if (visible(pt.x, pt.z)) { propHit = { prop: ph.prop, point: pt }; hit = null; }
-  }
-  const to = hit ? hit.point : propHit ? propHit.point : _from.clone().addScaledVector(_dir, 90);
-  const start = _from.clone();
-  start.y -= 0.3;
+  const ph = destructibles.raycast(_from, _dir, hit ? hit.distance : limit);
+  const propHit = ph && (!hit || ph.t < hit.distance)
+    ? { prop: ph.prop, point: _from.clone().addScaledVector(_dir, ph.t) }
+    : null;
+  const enemyHit = propHit ? null : hit;
+  const worldPoint = !enemyHit && !propHit && wh ? _from.clone().addScaledVector(_dir, wh.t) : null;
+  const to = enemyHit ? enemyHit.point : propHit ? propHit.point : worldPoint ?? _from.clone().addScaledVector(_dir, 90);
+
+  // コックピットでは銃口から、三人称ではカメラから線を引く。
+  // 銃口が着弾点より先にある近距離では、カメラから引く。
+  const muzzleGap = fx.muzzle ? fx.muzzle.distanceTo(_from) : Infinity;
+  const start = car.view === 'cockpit' && to.distanceTo(_from) > muzzleGap + 0.4 ? fx.muzzle : _from.clone();
   const line = new THREE.Line(new THREE.BufferGeometry().setFromPoints([start, to]), tracerMat);
   scene.add(line);
   setTimeout(() => { scene.remove(line); line.geometry.dispose(); }, 50);
-  sound.gunshot();
-  car.addTrauma(0.04);
+
   if (propHit) {
-    for (let k = 0; k < 4; k++) destructibles.emit('spark', to.x, to.y, to.z, (Math.random() - 0.5) * 6, Math.random() * 4, (Math.random() - 0.5) * 6, 0.25, 0.2);
+    const surface = propHit.prop.kind === 'tree' ? 'wood' : 'hard';
+    destructibles.impact(to.x, to.y, to.z, 0, 1, 0, surface);
+    sound.bulletImpact(surface);
     destructibles.shoot(propHit.prop, 1);
     return;
   }
-  if (!hit) return;
+  if (!enemyHit) {
+    if (wh && worldPoint) {
+      effects.addHole(worldPoint, { x: wh.nx, y: wh.ny, z: wh.nz });
+      destructibles.impact(worldPoint.x, worldPoint.y, worldPoint.z, wh.nx, wh.ny, wh.nz, wh.surface);
+      sound.bulletImpact(wh.surface);
+    }
+    return;
+  }
   sound.hit();
   hitMarker();
-  const civ = hit.object.userData.civ;
+  const civ = enemyHit.object.userData.civ;
   if (civ) traffic.damage(civ, 1);
-  else enemies.damage(hit.object.userData.enemy, 1, car);
+  else enemies.damage(enemyHit.object.userData.enemy, enemyHit.object.userData.weakspot ? 2 : 1, car);
 }
 
 enemies.onKill = ({ type, how, points, x, y, z }) => {
@@ -337,8 +375,11 @@ enemies.onPlayerHit = (dmg, fromX, fromZ, rammed) => {
 // ---- HUD ----
 function damage(n) {
   hp -= n;
-  $('flash').style.opacity = 1;
-  setTimeout(() => { $('flash').style.opacity = 0; }, 120);
+  if (flashCd <= 0) {
+    $('flash').style.opacity = reduceFx ? 0.22 : 1;
+    setTimeout(() => { $('flash').style.opacity = 0; }, reduceFx ? 70 : 110);
+    flashCd = 0.15;
+  }
   if (hp <= 0) end('dead');
 }
 
@@ -392,9 +433,12 @@ function updateHud(dt) {
   $('gear').textContent = p.reverse ? 'R' : p.gear;
   $('rpm').style.width = Math.min(100, p.rpm / 70) + '%';
   $('rpm').className = p.rpm > 6000 ? 'red' : '';
-  $('ammoNum').textContent = weapon.ammo;
-  $('ammo').className = weapon.ammo === 0 ? 'empty' : '';
-  $('reload').textContent = weapon.ammo === weapon.magSize ? '' : input.handsOff ? 'ハンドルを握ると補充' : '補充中…';
+  $('ammoNum').textContent = weapon.infinite > 0 ? '∞' : weapon.ammo;
+  $('ammoMax').textContent = weapon.infinite > 0 ? '' : ` / ${weapon.magSize}`;
+  $('ammo').className = weapon.infinite <= 0 && weapon.ammo === 0 ? 'empty' : '';
+  $('reload').textContent = weapon.infinite > 0
+    ? `無限弾 残り${weapon.infinite.toFixed(1)}秒`
+    : weapon.ammo === weapon.magSize ? '' : input.handsOff ? 'ハンドルを握ると補充' : '補充中…';
   $('combo').textContent = combo.multiplier > 1 ? `COMBO x${combo.multiplier}` : '';
   $('mode').textContent = input.handsOff
     ? 'GUN — ハンドル離し中！車が曲がっていく'
@@ -402,7 +446,10 @@ function updateHud(dt) {
   $('mode').className = input.handsOff ? 'gun' : '';
   $('cross').className = input.handsOff ? 'on' : '';
   const spread = weapon.spread(car.speed, p.yawRate);
-  $('cross').style.width = $('cross').style.height = Math.round(18 + spread * 900) + 'px';
+  // 実際のばらつき(角度)を画面のピクセルに直し、照準リングの大きさを合わせる
+  const halfPx = Math.tan(spread * 1.15) / Math.tan(car.camera.fov * Math.PI / 360) * innerHeight / 2;
+  const crossSize = Math.round(Math.min(180, Math.max(14, halfPx * 2)));
+  $('cross').style.width = $('cross').style.height = crossSize + 'px';
   hitTimer -= dt;
   if (hitTimer <= 0) $('hitmark').style.opacity = 0;
   dmgTimer -= dt;
@@ -411,9 +458,11 @@ function updateHud(dt) {
   $('focus').style.width = focus.gauge * 100 + '%';
   $('focusbar').className = focus.gauge >= 0.3 ? 'ready' : '';
   $('slowfx').style.opacity = (1 - focus.timeScale) / (1 - 0.35);
+  flashCd = Math.max(0, flashCd - dt);
   // 体力が少ないと画面のふちが赤く脈打ち、心音が鳴る
   const low = state === 'play' && hp < 30;
-  $('lowhp').style.opacity = low ? 0.55 + 0.45 * Math.sin(performance.now() / 150) : 0;
+  const pulse = 0.5 + 0.5 * Math.sin(performance.now() / 150);
+  $('lowhp').style.opacity = low ? (reduceFx ? 0.22 + 0.12 * pulse : 0.55 + 0.45 * pulse) : 0;
   heartTimer -= dt;
   if (low && heartTimer <= 0) { sound.heartbeat(); heartTimer = 0.9; }
   const kmh = Math.abs(p.speed) * 3.6;
@@ -423,6 +472,18 @@ function updateHud(dt) {
   updateHint(dt);
   $('stars').textContent = '★'.repeat(wanted.level) + '☆'.repeat(5 - wanted.level);
   $('stars').className = wanted.level >= 4 ? 'hot' : '';
+  // ボスの体力バー(複数いるときは近いほう)
+  let boss = null, bossDist = Infinity;
+  for (const e of enemies.list) {
+    if (e.type !== 'truck' && e.type !== 'heli') continue;
+    const d = Math.hypot(e.mesh.position.x - car.pos.x, e.mesh.position.z - car.pos.z);
+    if (d < bossDist) { boss = e; bossDist = d; }
+  }
+  $('bosshp').classList.toggle('hidden', !(state === 'play' && boss));
+  if (state === 'play' && boss) {
+    $('bossname').textContent = boss.type === 'truck' ? '装甲トラック' : '武装ヘリ';
+    $('bossfill').style.width = Math.max(0, Math.min(100, boss.hp / (boss.maxHp || 1) * 100)) + '%';
+  }
   bannerTimer -= dt;
   if (bannerTimer <= 0) $('banner').className = '';
 }
@@ -445,6 +506,8 @@ function loop() {
     elapsed += dt;
     timeLeft -= dt;
     car.update(dt, input, world);
+    // 射撃の前にカメラを現在の照準へ同期する(前フレームの向きで撃たない)
+    car.sync(realDt);
     wallCd -= dt;
     const impact = car.phys.impact;
     if (impact > 1.5) {
@@ -452,7 +515,9 @@ function loop() {
       car.addTrauma(Math.min(0.9, impact / 14));
       if (impact > 6 && wallCd <= 0) { damage(Math.round(impact * 0.8)); wallCd = 0.4; }
     }
-    for (const _ of weapon.update(realDt, { handsOff: input.handsOff, trigger: firing })) shoot();
+    const shots = weapon.update(realDt, { handsOff: input.handsOff, trigger: firing });
+    for (const _ of shots) shoot();
+    if (weapon.dry) { sound.dry(); car.addTrauma(0.006); }
     stats.update(dt, { slipDeg: car.phys.bodySlip * 180 / Math.PI, handsOff: input.handsOff, kmh: Math.abs(car.speed) * 3.6 });
     for (const it of pickups.update(dt, car.pos, () => world.roadSpot(car.pos.x, car.pos.z, 40, 110))) collect(it);
     // ニトロ中は後ろから炎
@@ -465,6 +530,7 @@ function loop() {
     combo.update(dt);
   } else {
     car.update(dt, noInput, world);
+    car.sync(realDt);
   }
   if (state === 'play') wanted.update(dt);
   enemies.update(dt, car, elapsed, state === 'play', wanted.level);
@@ -477,7 +543,6 @@ function loop() {
 
   world.update(car.pos.x, car.pos.z);
   destructibles.update(dt);
-  car.sync(realDt);
   effects.update(dt, car);
   const p = car.phys;
   sound.update({ rpm: p.rpm, throttle: p.throttle, slip: car.slip, speed: Math.abs(p.speed) });
@@ -488,7 +553,9 @@ function loop() {
 }
 // 開発時のみ: 自動テスト(Playwright)から状態を覗けるようにする
 if (import.meta.env.DEV) {
-  window.__game = { car, enemies, weapon, world, destructibles, get state() { return state; }, get score() { return score; }, get hp() { return hp; }, get kills() { return kills; }, get destroyed() { return destroyed; }, get stats() { return stats; }, get wanted() { return wanted; }, get focus() { return focus; }, traffic, pickups, end, renderer };
+  window.__game = { car, enemies, weapon, world, destructibles, effects, traffic, pickups, scene, get state() { return state; }, get score() { return score; }, get hp() { return hp; }, get kills() { return kills; }, get destroyed() { return destroyed; }, get stats() { return stats; }, get wanted() { return wanted; }, get focus() { return focus; }, end, renderer };
 }
 car.reset(spawn);
+document.body.classList.remove('playing');
+car.view = 'chase'; // タイトルはコックピットのダッシュボードではなく街を見せる
 loop();

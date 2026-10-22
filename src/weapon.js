@@ -12,6 +12,8 @@ export class Weapon {
     this.reloadAcc = 0;
     this.bloom = 0; // 連射でばらける
     this.infinite = 0; // 無限弾(アイテム)の残り秒
+    this.dry = false; // 弾切れで空撃ちした(音を鳴らす)
+    this.dryCd = 0;
   }
 
   get reloading() { return this.ammo < this.magSize && this.reloadWait <= 0; }
@@ -19,19 +21,25 @@ export class Weapon {
   // 撃った弾の数だけ要素を返す
   update(dt, { handsOff, trigger }) {
     const shots = [];
+    this.dry = false;
+    this.dryCd = Math.max(0, this.dryCd - dt);
     this.cooldown -= dt;
     this.infinite = Math.max(0, this.infinite - dt);
     this.bloom = Math.max(0, this.bloom - dt * 0.05);
     if (handsOff) {
       this.reloadWait = this.reloadDelay;
       this.reloadAcc = 0;
-      while (trigger && this.ammo > 0 && this.cooldown <= 0) {
+      while (trigger && (this.ammo > 0 || this.infinite > 0) && this.cooldown <= 0) {
         if (this.infinite <= 0) this.ammo--;
         this.cooldown += this.interval;
         this.bloom = Math.min(0.015, this.bloom + 0.002);
         shots.push({});
       }
       if (this.cooldown < 0) this.cooldown = 0;
+      if (trigger && shots.length === 0 && this.ammo <= 0 && this.infinite <= 0 && this.dryCd <= 0) {
+        this.dry = true;
+        this.dryCd = 0.25;
+      }
     } else {
       this.cooldown = Math.max(0, this.cooldown);
       this.reloadWait -= dt;
@@ -53,5 +61,7 @@ export class Weapon {
   reset() {
     this.ammo = this.magSize;
     this.cooldown = this.bloom = this.reloadAcc = this.reloadWait = this.infinite = 0;
+    this.dry = false;
+    this.dryCd = 0;
   }
 }

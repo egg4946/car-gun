@@ -33,6 +33,8 @@ function puffTexture() {
 const KINDS = {
   fire: { color: 0xff8a30, additive: true, gravity: -3, grow: 2.5 },
   smoke: { color: 0x555555, additive: false, gravity: -1.5, grow: 3 },
+  dust: { color: 0xc8b89a, additive: false, gravity: -1.2, grow: 2.2 },
+  wood: { color: 0x9a7048, additive: false, gravity: -1.8, grow: 1.6 },
   water: { color: 0xcfe8ff, additive: false, gravity: GRAVITY * 0.8, grow: 0.8 },
   spark: { color: 0xffd060, additive: true, gravity: GRAVITY * 0.6, grow: -0.5 },
 };
@@ -73,6 +75,23 @@ export class Destructibles {
     p.sprite.material.color.setHex(k.color);
     p.sprite.material.blending = k.additive ? THREE.AdditiveBlending : THREE.NormalBlending;
     p.sprite.visible = true;
+  }
+
+  // 弾が壁・地面・木に当たったときの火花と粉じん
+  impact(x, y, z, nx = 0, ny = 1, nz = 0, surface = 'hard') {
+    const n = surface === 'ground' ? 6 : 4;
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2, r = 2 + Math.random() * 5;
+      this.emit('spark', x, y, z,
+        Math.cos(a) * r + nx * 2, 1 + Math.random() * 3 + ny * 2, Math.sin(a) * r + nz * 2,
+        0.18 + Math.random() * 0.12, 0.18);
+    }
+    const dust = surface === 'wood' ? 'wood' : surface === 'ground' || surface === 'stone' || surface === 'building' ? 'dust' : 'smoke';
+    for (let i = 0; i < 3; i++) {
+      this.emit(dust, x, y, z,
+        (Math.random() - 0.5) * 1.8 + nx * 0.6, 0.4 + Math.random() + ny * 0.4, (Math.random() - 0.5) * 1.8 + nz * 0.6,
+        0.35 + Math.random() * 0.3, 0.32 + Math.random() * 0.2);
+    }
   }
 
   // 弾の光線で最初に当たる小物。{ prop, t } か null

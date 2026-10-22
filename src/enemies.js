@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 import { Vehicle, CFG } from './vehicle.js';
 import { Shooter, hitChance, chaseInput } from './ai.js';
-import { lineOfSight } from './geom.js';
+import { lineOfSight3D } from './geom.js';
 
 // 敵の種類ごとの性能
 const TYPES = {
@@ -63,12 +63,26 @@ const tracerMat = new THREE.LineBasicMaterial({ color: 0xffaa55 });
 // 当たり判定は見た目より少し大きい透明な箱(遠くの小さな敵にも当てやすく)
 const hitboxMat = new THREE.MeshBasicMaterial({ visible: false });
 const HITBOX = {
-  gunman: [new THREE.BoxGeometry(1.3, 2.2, 1.3), 1.1],
+  gunman: [new THREE.BoxGeometry(0.9, 2.2, 0.9), 1.1],
   drone: [new THREE.BoxGeometry(2.4, 1.2, 2.4), 0],
   chaser: [new THREE.BoxGeometry(2.2, 1.6, 4.6), 0.8],
   truck: [new THREE.BoxGeometry(3, 3.4, 7.6), 1.7],
   heli: [new THREE.BoxGeometry(3.2, 2.4, 9), 0],
 };
+
+// 歩兵は近距離では見た目どおり、遠距離だけ少し当たり判定を広げる。
+export function gunmanHitboxScale(dist) {
+  return 1 + Math.min(0.35, Math.max(0, (dist - 20) / 90) * 0.35);
+}
+
+// レーザーや弾道をカメラの直前で止める。画面いっぱいの線に見えるのを防ぐ。
+function shortOfMuzzle(muzzle, target, stop = 1.8) {
+  const dx = target.x - muzzle.x, dy = target.y - muzzle.y, dz = target.z - muzzle.z;
+  const len = Math.hypot(dx, dy, dz);
+  if (len < 1e-4) return target.clone();
+  const k = Math.min(stop, len * 0.35) / len;
+  return target.clone().lerp(muzzle, k);
+}
 
 function tag(root, enemy) {
   root.traverse(o => { o.userData.enemy = enemy; });
@@ -200,9 +214,14 @@ export class Enemies {
     this.onBoss = () => {}; // (type) ボスが現れた
   }
 
-  // プレイヤーの弾が当たる対象
+  // プレイヤーの弾が当たる対象(トラックの銃手は弱点として別枠)
   get hitMeshes() {
-    return this.list.map(e => e.hitbox);
+    const out = [];
+    for (const e of this.list) {
+      out.push(e.hitbox);
+      if (e.weakspot) out.push(e.weakspot);
+    }
+    return out;
   }
 
   count(type) { return this.list.filter(e => e.type === type).length; }
@@ -263,11 +282,18 @@ export class Enemies {
       e = { mesh: type === 'truck' ? buildTruck() : buildChaser(), vehicle: v, drive: {}, ramCd: 0 };
       if (type === 'truck') { e.shooter = new Shooter(TYPES.truck.shooter); e.muzzleY = 4.2; }
     }
-    Object.assign(e, { type, hp: TYPES[type].hp, flash: 0, laser: null });
+    Object.assign(e, { type, hp: TYPES[type].hp, maxHp: TYPES[type].hp, flash: 0, laser: null });
     const [geo, y] = HITBOX[type];
     e.hitbox = new THREE.Mesh(geo, hitboxMat);
     e.hitbox.position.y = y;
     e.mesh.add(e.hitbox);
+    if (type === 'truck') {
+      // 屋根の銃手は本体の箱より上にいる。胸の高さに弱点の箱を足す。
+      e.weakspot = new THREE.Mesh(new THREE.BoxGeometry(1.0, 1.8, 1.0), hitboxMat);
+      e.weakspot.position.set(0, 4.35, 1.5);
+      e.weakspot.userData.weakspot = true;
+      e.mesh.add(e.weakspot);
+    }
     tag(e.mesh, e);
     this.scene.add(e.mesh);
     this.list.push(e);
@@ -296,6 +322,8 @@ export class Enemies {
         // 遠いほど少し大きく描いて、画面上で小さくなりすぎないようにする
         m.scale.setScalar(1.3 * (1 + Math.min(0.5, Math.max(0, dist - 30) / 100)));
         e.muzzleY = 1.42 * m.scale.y;
+        // 当たり判定も距離に応じて少しだけ広げる(近距離の過剰な当たりは防ぐ)
+        e.hitbox.scale.setScalar(gunmanHitboxScale(dist));
         // 速い車に轢かれる
         if (active && speed > 5 && this.underCar(car, m.position)) {
           this.kill(e, 'runover', RUN_OVER_POINTS, car);
@@ -320,21 +348,26 @@ export class Enemies {
     if (e.losTimer <= 0) {
       e.losTimer = 0.2;
       // ヘリは上空からビル越しに撃てる
-      e.los = e.air || lineOfSight(this.world.losBoxes ?? this.world.boxes, m.position.x, m.position.z, car.pos.x, car.pos.z);
+      const eyeY = m.position.y + (e.muzzleY || 1.3);
+      e.los = e.air || lineOfSight3D(
+        this.world.boxes ?? this.world.losBoxes ?? [],
+        m.position.x, eyeY, m.position.z,
+        car.pos.x, 1.3, car.pos.z
+      );
     }
     const muzzle = new THREE.Vector3(m.position.x, m.position.y + e.muzzleY, m.position.z);
     for (const ev of e.shooter.update(dt, { dist, los: e.los })) {
       if (ev.type === 'aim') this.sound.lockOn(Math.max(0.2, 1 - dist / 70));
       if (ev.type === 'fire') this.enemyFire(e, muzzle, head, dist, speed);
     }
-    // 照準中は赤いレーザーで予告する
+    // 照準中は赤いレーザーで予告する。線はプレイヤーの手前で止める。
     const aiming = e.shooter.state === 'aim';
     if (aiming && !e.laser) {
-      e.laser = new THREE.Line(new THREE.BufferGeometry().setFromPoints([muzzle, head]), laserMat);
+      e.laser = new THREE.Line(new THREE.BufferGeometry().setFromPoints([muzzle, shortOfMuzzle(muzzle, head)]), laserMat);
       this.scene.add(e.laser);
     }
     if (!aiming && e.laser) this.dropLaser(e);
-    if (e.laser) e.laser.geometry.setFromPoints([muzzle, head]);
+    if (e.laser) e.laser.geometry.setFromPoints([muzzle, shortOfMuzzle(muzzle, head)]);
   }
 
   // 被弾は白、狙っている間は体が赤く脈打つ
@@ -371,6 +404,9 @@ export class Enemies {
     const hit = Math.random() < hitChance({ dist, speed });
     const to = head.clone();
     if (!hit) to.add(new THREE.Vector3((Math.random() - 0.5) * 6, (Math.random() - 0.3) * 3, (Math.random() - 0.5) * 6));
+    // 着弾点が画面中心に来ると線が画面全体に伸びて見えるので、手前で終わらせる
+    const len = to.distanceTo(muzzle);
+    if (len > 1e-4) to.lerp(muzzle, Math.min(1.8, len * 0.35) / len);
     this.tracer(muzzle, to, 0.06);
     this.sound.enemyShot(Math.max(0.15, 1 - dist / 80));
     if (hit) this.onPlayerHit(TYPES[e.type].damage, e.mesh.position.x, e.mesh.position.z);

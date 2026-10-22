@@ -2,7 +2,8 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { Weapon } from '../src/weapon.js';
 import { Shooter, hitChance, chaseInput, Combo } from '../src/ai.js';
-import { segmentHitsBox, lineOfSight } from '../src/geom.js';
+import { segmentHitsBox, lineOfSight, rayBoxHit, lineOfSight3D, raycastWorldBoxes } from '../src/geom.js';
+import { gunmanHitboxScale } from '../src/enemies.js';
 import { Vehicle } from '../src/vehicle.js';
 import { emptyWorld } from './helpers.js';
 
@@ -49,6 +50,21 @@ test('速く走るほど・車が回っているほど弾がばらける', () =>
   assert.ok(w.spread(10, 1.5) > w.spread(10, 0) * 1.5);
 });
 
+test('弾切れで引くと空撃ちフラグが立ち、短い間隔で繰り返さない', () => {
+  const w = new Weapon();
+  w.ammo = 0;
+  assert.equal(w.update(DT, { handsOff: true, trigger: true }).length, 0);
+  assert.equal(w.dry, true);
+  w.update(DT, { handsOff: true, trigger: true });
+  assert.equal(w.dry, false);
+  let dryCount = 0;
+  for (let t = 0; t < 0.4; t += DT) {
+    w.update(DT, { handsOff: true, trigger: true });
+    if (w.dry) dryCount++;
+  }
+  assert.ok(dryCount >= 1 && dryCount <= 2, `${dryCount} dry clicks`);
+});
+
 // ---- 視線 ----
 test('線分と箱の交差判定', () => {
   const b = { minX: -1, maxX: 1, minZ: -1, maxZ: 1 };
@@ -57,6 +73,48 @@ test('線分と箱の交差判定', () => {
   assert.equal(segmentHitsBox(-5, 0, -2, 0, b), false);
   assert.equal(lineOfSight([b], -5, 0, 5, 0), false);
   assert.equal(lineOfSight([b], -5, 3, 5, 3), true);
+});
+
+test('高さつき光線は箱の上を通過し、当たった面の法線を返す', () => {
+  const b = { minX: -1, maxX: 1, minZ: -1, maxZ: 1, minY: 0, maxY: 2 };
+  const hit = rayBoxHit(-5, 1, 0, 1, 0, 0, b);
+  assert.ok(hit);
+  assert.equal(hit.t, 4);
+  assert.equal(hit.nx, -1);
+  assert.equal(hit.ny, 0);
+  assert.equal(rayBoxHit(-5, 3, 0, 1, 0, 0, b), null);
+  const inside = rayBoxHit(0, 1, 0, 1, 0, 0, b);
+  assert.equal(inside.inside, true);
+  assert.equal(inside.t, 1);
+});
+
+test('3D 視線は低い物の上を通せる', () => {
+  const low = { minX: 0, maxX: 10, minZ: -1, maxZ: 1, minY: 0, maxY: 0.9 };
+  const tall = { ...low, maxY: 5 };
+  assert.equal(lineOfSight3D([low], -5, 1.3, 0, 15, 1.3, 0), true);
+  assert.equal(lineOfSight3D([low], -5, 0.5, 0, 15, 0.5, 0), false);
+  assert.equal(lineOfSight3D([tall], -5, 1.3, 0, 15, 1.3, 0), false);
+});
+
+test('レイキャストは地面・建物を返し、小物は destructibles に任せる', () => {
+  const b = { minX: 5, maxX: 6, minZ: -1, maxZ: 1, minY: 0, maxY: 5, surface: 'building' };
+  const h = raycastWorldBoxes([b], { x: 0, y: 1.3, z: 0 }, { x: 1, y: 0, z: 0 }, 20);
+  assert.equal(h.t, 5);
+  assert.equal(h.surface, 'building');
+  assert.equal(h.nx, -1);
+  const g = raycastWorldBoxes([], { x: 0, y: 2, z: 0 }, { x: 0, y: -1, z: 0 }, 20);
+  assert.equal(g.kind, 'ground');
+  assert.equal(g.t, 2);
+  const prop = { ...b, surface: 'hard' };
+  Object.defineProperty(prop, 'prop', { value: {} });
+  assert.equal(raycastWorldBoxes([prop], { x: 0, y: 1.3, z: 0 }, { x: 1, y: 0, z: 0 }, 20), null);
+});
+
+test('歩兵の当たり判定は近距離で見た目に近づき、遠距離で少し広がる', () => {
+  assert.equal(gunmanHitboxScale(10), 1);
+  assert.equal(gunmanHitboxScale(20), 1);
+  assert.ok(gunmanHitboxScale(60) > 1.1);
+  assert.equal(gunmanHitboxScale(200), 1.35);
 });
 
 // ---- 撃ってくる敵 ----
@@ -154,4 +212,13 @@ test('無限弾の間は撃っても弾が減らず、時間が切れると元�
   assert.equal(w.ammo, w.magSize);
   tick(w, 1.5, { handsOff: true, trigger: true });
   assert.ok(w.ammo < w.magSize);
+});
+
+test('弾が 0 でも無限弾の間は撃てる', () => {
+  const w = new Weapon();
+  w.ammo = 0;
+  w.infinite = 1;
+  assert.equal(w.update(DT, { handsOff: true, trigger: true }).length, 1);
+  assert.equal(w.ammo, 0);
+  assert.equal(w.dry, false);
 });
