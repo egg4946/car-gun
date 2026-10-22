@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ドライブバイ・ガンナー</title>
+<link rel="icon" href="data:," />
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#111;font-family:system-ui,"Hiragino Sans","Yu Gothic",sans-serif;color:#fff}
+  canvas{display:block}
+  #hud{position:fixed;inset:0;pointer-events:none}
+  #top{position:absolute;top:12px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;font-size:22px;font-weight:700;text-shadow:0 2px 4px #000}
+  #mode{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);padding:6px 18px;border-radius:20px;font-weight:700;background:#0008;white-space:nowrap}
+  #mode.gun{background:#e33c}
+  #cross{position:absolute;top:50%;left:50%;width:22px;height:22px;margin:-11px;border:2px solid #fff9;border-radius:50%;opacity:.35}
+  #cross.on{opacity:1;border-color:#f44}
+  #hpbar{position:absolute;bottom:18px;left:20px;width:180px;height:14px;background:#0008;border:2px solid #fff6}
+  #hp{height:100%;background:#4f6;width:100%}
+  #flash{position:absolute;inset:0;background:#f003;opacity:0;transition:opacity .15s}
+  #screen{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#000b;text-align:center;gap:10px;padding:0 16px}
+  #screen h1{font-size:44px;margin:0}
+  #screen p{margin:2px;line-height:1.6}
+  #screen .rank{font-size:30px;color:#fc3}
+  #screen .new{color:#fc3;font-weight:800}
+  #screen .stats{font-size:14px;opacity:.85}
+  button,a.btn{font-size:20px;padding:10px 28px;border:0;border-radius:8px;background:#f55;color:#fff;cursor:pointer;text-decoration:none;font-weight:700}
+  a.btn{background:#1d9bf0}
+  #map{font:inherit;color:#fff;background:#222;border:1px solid #fff6;border-radius:6px;padding:8px 12px;margin-left:8px}
+  #map:focus-visible{outline:2px solid #f55;outline-offset:3px}
+  .hidden{display:none!important}
+  #speedo{position:absolute;right:20px;bottom:14px;text-align:right;text-shadow:0 2px 4px #000}
+  #speedo .row{display:flex;align-items:baseline;justify-content:flex-end;gap:10px}
+  #kmh{font-size:44px;font-weight:800;font-variant-numeric:tabular-nums}
+  #speedo small{font-size:14px;opacity:.8}
+  #gear{font-size:28px;font-weight:800;background:#0008;border-radius:6px;padding:0 10px;min-width:22px;text-align:center}
+  #rpmbar{width:180px;height:8px;background:#0008;border:1px solid #fff5;margin-top:4px;margin-left:auto}
+  #rpm{height:100%;width:0;background:#fc3}
+  #rpm.red{background:#f33}
+  #cross{transition:width .08s,height .08s;margin:0;transform:translate(-50%,-50%)}
+  #hitmark{position:absolute;top:50%;left:50%;width:26px;height:26px;transform:translate(-50%,-50%) rotate(45deg);opacity:0;
+    background:linear-gradient(#fff,#fff) center/100% 2px no-repeat,linear-gradient(#fff,#fff) center/2px 100% no-repeat;
+    -webkit-mask:radial-gradient(circle,transparent 5px,#000 6px);mask:radial-gradient(circle,transparent 5px,#000 6px)}
+  #dmgdir{position:absolute;top:50%;left:50%;width:260px;height:260px;border-radius:50%;border-top:6px solid #f22;opacity:0;transform:translate(-50%,-50%)}
+  #ammo{position:absolute;right:20px;bottom:96px;text-align:right;text-shadow:0 2px 4px #000;font-weight:700}
+  #ammo b{font-size:30px;font-variant-numeric:tabular-nums}
+  #ammo.empty b{color:#f44}
+  #reload{font-size:13px;color:#fc3;min-height:16px}
+  #combo{position:absolute;top:48px;right:20px;font-size:24px;font-weight:800;color:#fc3;text-shadow:0 2px 4px #000}
+  .popup{position:absolute;transform:translate(-50%,-50%);font-weight:800;font-size:18px;color:#fff;text-shadow:0 2px 4px #000;white-space:nowrap}
+  .popup.big{font-size:24px;color:#fc3}
+  .popup.small{font-size:14px;color:#9ee;font-weight:700}
+  #stars{position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:26px;letter-spacing:2px;color:#fc3;text-shadow:0 2px 4px #000}
+  #stars.hot{color:#f44;animation:pulse .6s infinite alternate}
+  #banner{position:absolute;top:22%;left:50%;transform:translate(-50%,-50%) scale(.8);font-size:40px;font-weight:900;color:#fc3;text-shadow:0 3px 8px #000;opacity:0;transition:opacity .2s,transform .2s;white-space:nowrap}
+  #banner.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+  #banner.danger{color:#f44}
+  @keyframes pulse{from{opacity:1}to{opacity:.55}}
+  #lowhp{position:absolute;inset:0;opacity:0;pointer-events:none;box-shadow:inset 0 0 180px 50px rgba(255,0,0,.6)}
+  #speedlines{position:absolute;inset:-20%;opacity:0;pointer-events:none;
+    background:repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg 3.5deg,rgba(255,255,255,.28) 3.5deg 4deg);
+    -webkit-mask:radial-gradient(circle at 50% 50%,transparent 30%,#000 70%);mask:radial-gradient(circle at 50% 50%,transparent 30%,#000 70%)}
+  #hint{position:absolute;bottom:64px;left:50%;transform:translateX(-50%);padding:8px 18px;border-radius:10px;background:#000a;font-size:16px;font-weight:700;opacity:0;transition:opacity .3s;white-space:nowrap}
+  #hint.show{opacity:1}
+  #time.plus{color:#6f6}
+  #focusbar{position:absolute;bottom:38px;left:20px;width:180px;height:8px;background:#0008;border:1px solid #fff5}
+  #focus{height:100%;width:0;background:#4ad}
+  #focusbar.ready #focus{background:#6ef;box-shadow:0 0 8px #6ef}
+  #focuslabel{position:absolute;bottom:48px;left:20px;font-size:11px;color:#9df;text-shadow:0 1px 2px #000}
+  #slowfx{position:absolute;inset:0;opacity:0;pointer-events:none;box-shadow:inset 0 0 160px 40px rgba(60,150,255,.55)}
+  @media (max-width:760px){#mode{bottom:84px;font-size:13px}#kmh{font-size:34px}}
+</style>
+</head>
+<body>
+<div id="hud">
+  <div id="top"><span>TIME <b id="time">60</b></span><span>SCORE <b id="score">0</b></span></div>
+  <div id="popups"></div>
+  <div id="stars">☆☆☆☆☆</div>
+  <div id="banner"></div>
+  <div id="speedlines"></div>
+  <div id="lowhp"></div>
+  <div id="hint"></div>
+  <div id="slowfx"></div>
+  <div id="focuslabel">集中ゲージ(ドリフト・撃破で溜まる / 右クリック長押し)</div>
+  <div id="focusbar"><div id="focus"></div></div>
+  <div id="cross"></div>
+  <div id="hitmark"></div>
+  <div id="dmgdir"></div>
+  <div id="combo"></div>
+  <div id="ammo"><span><b id="ammoNum">24</b> / 24</span><div id="reload"></div></div>
+  <div id="hpbar"><div id="hp"></div></div>
+  <div id="mode">DRIVING — Spaceでハンドルを離す</div>
+  <div id="speedo">
+    <div class="row"><span><b id="kmh">0</b> <small>km/h</small></span><span id="gear">1</span></div>
+    <div id="rpmbar"><div id="rpm"></div></div>
+  </div>
+  <div id="flash"></div>
+</div>
+<div id="screen">
+  <h1 id="title">ドライブバイ・ガンナー</h1>
+  <p id="msg">運転か、射撃か。<br>ハンドルを離している間だけ撃てる。でも車は勝手に曲がり続ける。<br>弾はハンドルを握っている間に補充。速く走れば敵の弾は当たりにくい。</p>
+  <p style="opacity:.8;font-size:14px">W/S アクセル・ブレーキ(止まってS長押しでバック)　A/D ハンドル　Shift サイドブレーキ<br><b>Space 長押し = ハンドルを離す</b>　マウス = 照準　クリック = 射撃　<b>右クリック長押し = 集中(スロー)</b>　C 視点切替　M ミュート</p>
+  <label for="map">マップ（変更するとタイトルに戻ります）
+    <select id="map">
+      <option value="city">市街地</option>
+      <option value="forest">森の林道</option>
+    </select>
+  </label>
+  <button id="start">START</button>
+  <a id="share" class="btn hidden" target="_blank" rel="noopener">Xでシェア</a>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

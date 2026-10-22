@@ -1,0 +1,1329 @@
+[    2817ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:105:26)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2919ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2921ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2928ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2944ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2962ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2979ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    2996ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3012ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3028ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3045ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3062ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3079ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3095ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3111ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3129ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3145ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3162ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3179ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3196ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3212ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3229ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3246ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3261ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3279ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3295ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3319ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3328ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3345ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3361ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3379ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3395ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3411ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3429ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3444ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3461ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3478ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3495ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3511ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3528ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3544ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3561ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3578ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3595ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3611ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3629ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3644ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3678ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3696ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3711ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3729ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3744ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3761ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3778ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3794ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3811ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3828ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3844ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3860ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3878ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3895ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3911ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3928ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3945ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3969ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3978ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    3994ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4015ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4027ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4044ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4061ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4079ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4190ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4191ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4191ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4191ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4191ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4191ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4194ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4210ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4228ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4244ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4261ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4278ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4295ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4319ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4328ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4344ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4362ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4378ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4396ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4412ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4427ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4444ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4460ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4477ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4494ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4510ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4527ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4544ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4561ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4578ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4594ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4611ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4628ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4644ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4678ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4694ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4711ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4728ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4744ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4762ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4778ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4794ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4811ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4830ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4844ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4860ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4879ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4895ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4912ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4928ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4945ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4962ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4977ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    4994ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5010ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5027ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5043ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5060ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5077ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5094ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5110ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5127ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5144ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5160ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5176ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5193ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5210ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5227ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5245ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5260ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5278ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5294ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5310ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5328ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5344ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5360ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5377ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5393ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5410ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5428ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5444ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5460ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5477ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5494ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5511ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5527ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5544ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5560ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5578ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5594ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5611ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5627ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5644ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5677ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5694ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5710ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5728ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5744ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5761ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5778ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5794ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5816ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5827ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5845ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5868ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5876ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5894ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5911ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5927ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5944ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5961ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5978ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    5994ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6010ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6027ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6044ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6061ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6078ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6093ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6110ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6128ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6143ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6160ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6177ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6195ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6218ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6227ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6244ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6268ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6277ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6294ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6310ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6327ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6344ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6361ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6378ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6394ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6412ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6428ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6443ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6460ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6478ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6493ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6510ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6528ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6544ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6563ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6579ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6595ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6611ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6627ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6644ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6678ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6694ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6710ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6727ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6744ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6760ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6777ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6795ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6810ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6827ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6843ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6860ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6878ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6893ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6910ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6928ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6944ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6960ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6978ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    6993ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7011ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7027ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7044ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7062ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7077ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7094ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7111ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7127ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7144ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7161ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7178ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7193ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7211ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7228ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7244ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7261ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7278ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7294ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7310ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7328ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7353ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7360ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7377ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7393ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7411ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7427ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7444ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7461ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7477ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7494ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7511ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7528ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7544ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7561ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7578ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7594ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7610ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7628ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7643ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7678ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7694ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7711ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7728ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7744ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7761ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7778ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7794ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7812ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7829ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7843ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7862ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7877ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7893ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7910ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7928ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7944ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7962ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7978ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    7994ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8011ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8027ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8045ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8061ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8078ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8093ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8111ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8127ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8145ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8161ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8177ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8193ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8210ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8228ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8244ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8261ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8278ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8293ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8312ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8328ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8343ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8360ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8376ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8393ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8409ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8426ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8443ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8460ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8476ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8493ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8510ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8527ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8543ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8561ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8577ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8594ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8611ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8626ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8644ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8678ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8694ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8711ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8727ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8744ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8760ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8777ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8793ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8811ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8826ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8844ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8860ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8878ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8894ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8910ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8927ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8944ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8961ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8978ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    8994ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9019ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9026ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9044ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9060ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9078ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9094ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9112ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9127ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9143ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9160ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9178ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9194ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9211ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9228ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9243ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9262ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9277ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9294ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9311ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9328ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9345ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9360ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9378ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9394ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9411ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9429ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9443ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9460ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9477ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9493ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9510ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9527ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9543ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9560ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9577ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9593ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9610ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9628ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9644ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9661ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9676ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9694ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9710ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9726ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9743ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9760ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9777ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9793ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9811ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9828ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9844ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9860ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9878ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9894ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9911ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9927ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9944ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9960ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9978ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[    9994ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10012ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10028ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10044ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10061ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10077ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10094ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10110ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10127ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10144ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10162ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10178ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10194ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10214ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10230ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
+[   10244ms] TypeError: Failed to execute 'setTargetAtTime' on 'AudioParam': The provided float value is non-finite.
+    at Sound.update (http://localhost:5173/src/audio.js:100:56)
+    at loop (http://localhost:5173/src/main.js?t=1792490067498:315:9)
