@@ -1,0 +1,14 @@
+# 依存パッケージ(npm install で作られる)
+node_modules/
+
+# ビルド結果(npm run build で作られる)
+dist/
+
+# ブラウザでの動作確認(Playwright)のログ・スクリーンショット
+.playwright-mcp/
+
+# 個人の設定・OS のゴミ
+.claude/settings.local.json
+*.log
+.DS_Store
+Thumbs.db
