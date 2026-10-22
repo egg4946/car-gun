@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { pointInBox } from './geom.js';
+import { pointInBox, raycastWorldBoxes } from './geom.js';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { buildBlock, PITCH, SLAB, LOT } from './cityBlock.js';
 import { PROPS, PropState } from './props.js';
@@ -171,6 +171,11 @@ export class World {
       return { x, z, yaw };
     }
     return null;
+  }
+
+  // 弾・カメラ用のレイキャスト。地面と高さつき箱のうち最初の当たりを返す。
+  raycast(o, d, maxT = 90) {
+    return raycastWorldBoxes(this.boxes, o, d, maxT);
   }
 
   // 円(半径r)とビルの衝突。押し出して、ぶつかったら true。

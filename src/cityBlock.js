@@ -298,7 +298,7 @@ export function buildBlock(i, j, broken = null) {
       const h = floors * FLOOR, y0 = CURB_H + 0.03, y1 = y0 + h;
       addFacade(facade, cx + x0, cx + x1, cz + z0, cz + z1, y0, y1, C(pick(TINTS)));
       solid.top(cx + x0, cx + x1, cz + z0, cz + z1, y1, C(pick(ROOFS)));
-      boxes.push({ minX: cx + x0, maxX: cx + x1, minZ: cz + z0, maxZ: cz + z1 });
+      boxes.push({ minX: cx + x0, maxX: cx + x1, minZ: cz + z0, maxZ: cz + z1, minY: 0, maxY: y1, surface: 'building' });
       // 屋上の設備
       if (floors >= 4 && w > 6 && d > 6) {
         const mx = cx + (x0 + x1) / 2 + (rand() - 0.5) * (w - 5), mz = cz + (z0 + z1) / 2 + (rand() - 0.5) * (d - 5);

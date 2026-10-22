@@ -9,10 +9,12 @@
   html,body{margin:0;height:100%;overflow:hidden;background:#111;font-family:system-ui,"Hiragino Sans","Yu Gothic",sans-serif;color:#fff}
   canvas{display:block}
   #hud{position:fixed;inset:0;pointer-events:none}
+  body:not(.playing) #hud{display:none}
   #top{position:absolute;top:12px;left:0;right:0;display:flex;justify-content:space-between;padding:0 20px;font-size:22px;font-weight:700;text-shadow:0 2px 4px #000}
   #mode{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);padding:6px 18px;border-radius:20px;font-weight:700;background:#0008;white-space:nowrap}
   #mode.gun{background:#e33c}
-  #cross{position:absolute;top:50%;left:50%;width:22px;height:22px;margin:-11px;border:2px solid #fff9;border-radius:50%;opacity:.35}
+  #cross{position:absolute;top:50%;left:50%;width:22px;height:22px;margin:-11px;border:2px solid #fff9;border-radius:50%;opacity:.35;box-shadow:0 0 0 1px #000a,inset 0 0 0 1px #0008}
+  #cross::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px #000b}
   #cross.on{opacity:1;border-color:#f44}
   #hpbar{position:absolute;bottom:18px;left:20px;width:180px;height:14px;background:#0008;border:2px solid #fff6}
   #hp{height:100%;background:#4f6;width:100%}
@@ -51,6 +53,10 @@
   .popup.small{font-size:14px;color:#9ee;font-weight:700}
   #stars{position:absolute;top:10px;left:50%;transform:translateX(-50%);font-size:26px;letter-spacing:2px;color:#fc3;text-shadow:0 2px 4px #000}
   #stars.hot{color:#f44;animation:pulse .6s infinite alternate}
+  #bosshp{position:absolute;top:46px;left:50%;transform:translateX(-50%);text-align:center;text-shadow:0 2px 4px #000}
+  #bossname{font-size:13px;font-weight:800;letter-spacing:1px;color:#ffd7d0}
+  #bossbar{width:min(300px,46vw);height:9px;margin-top:4px;background:#0008;border:1px solid #fff6}
+  #bossfill{height:100%;width:100%;background:linear-gradient(90deg,#f44,#fc3);transition:width .12s}
   #banner{position:absolute;top:22%;left:50%;transform:translate(-50%,-50%) scale(.8);font-size:40px;font-weight:900;color:#fc3;text-shadow:0 3px 8px #000;opacity:0;transition:opacity .2s,transform .2s;white-space:nowrap}
   #banner.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
   #banner.danger{color:#f44}
@@ -67,6 +73,8 @@
   #focusbar.ready #focus{background:#6ef;box-shadow:0 0 8px #6ef}
   #focuslabel{position:absolute;bottom:48px;left:20px;font-size:11px;color:#9df;text-shadow:0 1px 2px #000}
   #slowfx{position:absolute;inset:0;opacity:0;pointer-events:none;box-shadow:inset 0 0 160px 40px rgba(60,150,255,.55)}
+  #screen .opt{display:flex;align-items:center;gap:7px;font-size:14px;opacity:.85;cursor:pointer}
+  #screen .opt input{width:16px;height:16px;accent-color:#f55}
   @media (max-width:760px){#mode{bottom:84px;font-size:13px}#kmh{font-size:34px}}
 </style>
 </head>
@@ -75,6 +83,7 @@
   <div id="top"><span>TIME <b id="time">60</b></span><span>SCORE <b id="score">0</b></span></div>
   <div id="popups"></div>
   <div id="stars">☆☆☆☆☆</div>
+  <div id="bosshp" class="hidden"><div id="bossname"></div><div id="bossbar"><div id="bossfill"></div></div></div>
   <div id="banner"></div>
   <div id="speedlines"></div>
   <div id="lowhp"></div>
@@ -86,7 +95,7 @@
   <div id="hitmark"></div>
   <div id="dmgdir"></div>
   <div id="combo"></div>
-  <div id="ammo"><span><b id="ammoNum">24</b> / 24</span><div id="reload"></div></div>
+  <div id="ammo"><span><b id="ammoNum">24</b><span id="ammoMax"> / 24</span></span><div id="reload"></div></div>
   <div id="hpbar"><div id="hp"></div></div>
   <div id="mode">DRIVING — Spaceでハンドルを離す</div>
   <div id="speedo">
@@ -105,6 +114,7 @@
       <option value="forest">森の林道</option>
     </select>
   </label>
+  <label class="opt"><input type="checkbox" id="reducefx"> 画面の赤いフラッシュを抑える</label>
   <button id="start">START</button>
   <a id="share" class="btn hidden" target="_blank" rel="noopener">Xでシェア</a>
 </div>

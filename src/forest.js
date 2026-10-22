@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
-import { pointInBox } from './geom.js';
+import { pointInBox, raycastWorldBoxes } from './geom.js';
 
 /**
  * 遊び方: タイトルの「マップ」で「森の林道」を選び、START を押す。
@@ -127,9 +127,10 @@ export class Forest {
       meshes.push(new THREE.Mesh(geometry, this.roadMaterial));
     }
     const trees = [], rocks = [], logs = [];
-    const place = (list, x, z, hx, hz, y, sx, sy, sz, yaw = 0) => {
+    // top / surface は弾と視線の高さ判定用。見た目の高さに合わせる。
+    const place = (list, x, z, hx, hz, y, sx, sy, sz, yaw = 0, top = 3, surface = 'hard') => {
       if (Math.abs(x - center(z)) <= HALF_ROAD + 1.8 + hx + MAX_SLOPE * hz) return;
-      const b = { minX: x - hx, maxX: x + hx, minZ: z - hz, maxZ: z + hz };
+      const b = { minX: x - hx, maxX: x + hx, minZ: z - hz, maxZ: z + hz, minY: 0, maxY: top, surface };
       if (boxes.some(other => b.minX <= other.maxX && b.maxX >= other.minX && b.minZ <= other.maxZ && b.maxZ >= other.minZ)) return;
       boxes.push(b);
       list.push({ x, z, y, sx, sy, sz, yaw, tint: 0.8 + rand() * 0.35 });
@@ -138,16 +139,16 @@ export class Forest {
       for (let b = 0; b < 8; b++) {
         const x = x0 + a * 8 + 2 + rand() * 4, z = z0 + b * 8 + 2 + rand() * 4;
         const s = 0.8 + rand() * 0.5;
-        place(trees, x, z, 0.48 * s, 0.48 * s, 0, s, s, s, rand() * Math.PI * 2);
+        place(trees, x, z, 0.48 * s, 0.48 * s, 0, s, s, s, rand() * Math.PI * 2, 11 * s, 'wood');
       }
     }
     for (let k = 0; k < 3; k++) {
       const x = x0 + 4 + rand() * (CELL - 8), z = z0 + 4 + rand() * (CELL - 8);
       const s = 0.8 + rand();
-      place(rocks, x, z, s, s, s * 0.55, s, s * 0.9, s);
+      place(rocks, x, z, s, s, s * 0.55, s, s * 0.9, s, 0, 1.6 * s, 'stone');
     }
     const lx = x0 + 5 + rand() * (CELL - 10), lz = z0 + 5 + rand() * (CELL - 10);
-    place(logs, lx, lz, 2.5, 0.45, 0.45, 1, 1, 1);
+    place(logs, lx, lz, 2.5, 0.45, 0.45, 1, 1, 1, 0, 0.9, 'wood');
     for (const [items, geometry, material] of [[trees, this.treeGeometry, this.treeMaterial],
       [rocks, this.rockGeometry, this.rockMaterial], [logs, this.logGeometry, this.logMaterial]]) {
       if (!items.length) continue;
@@ -212,6 +213,11 @@ export class Forest {
       out.push({ x, z });
     }
     return out;
+  }
+
+  // 弾・カメラ用のレイキャスト。地面と高さつき箱のうち最初の当たりを返す。
+  raycast(o, d, maxT = 90) {
+    return raycastWorldBoxes(this.boxes, o, d, maxT);
   }
 
   collide(pos, r) {

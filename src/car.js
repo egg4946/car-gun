@@ -4,6 +4,7 @@ import { Vehicle } from './vehicle.js';
 const _v = new THREE.Vector3();
 const _q = new THREE.Quaternion();
 const _e = new THREE.Euler(0, 0, 0, 'YXZ');
+const _camDir = new THREE.Vector3();
 
 // なめらかなランダム揺れ(-1〜1)
 function wobble(t, seed) {
@@ -27,9 +28,20 @@ export class Car {
     this.buildModel();
 
     this.head = new THREE.Object3D(); // 運転席(右ハンドル)
-    this.head.position.set(0.38, 1.27, 0.05);
+    this.head.position.set(0.38, 1.34, 0.05);
     this.body.add(this.head);
+    // 銃は車体ではなく視点に付ける。横を向いても画面の右下に残る。
+    this.gunRig = new THREE.Group();
+    this.head.add(this.gunRig);
+    this.gunRig.add(this.gun);
+    this.gun.position.set(0.17, -0.28, -0.57);
+    this.gun.rotation.set(-0.02, 0, 0);
+    this.gunRig.visible = false;
     this.camera = new THREE.PerspectiveCamera(72, innerWidth / innerHeight, 0.1, 400);
+    this.world = null;
+    this.recoil = 0;
+    this.gunKick = 0;
+    this.muzzleTimer = 0;
     this.reset();
   }
 
@@ -40,6 +52,7 @@ export class Car {
 
     const chassis = new THREE.Mesh(new THREE.BoxGeometry(1.8, 0.55, 4.3), paint);
     chassis.position.y = 0.6;
+    this.chassis = chassis;
 
     // 外から見たときだけ表示する部分
     this.exterior = new THREE.Group();
@@ -60,19 +73,54 @@ export class Car {
 
     // 運転席から見える部分
     this.interior = new THREE.Group();
-    const dash = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.25, 0.5), dark);
-    dash.position.set(0, 0.99, -0.8);
+    const dash = new THREE.Mesh(new THREE.BoxGeometry(1.7, 0.18, 0.5), dark);
+    dash.position.set(0, 0.92, -0.8);
     const tilt = new THREE.Group();
-    // 上端が目線より下になる高さ(地平線の先にいる敵をハンドルで隠さない)
-    tilt.position.set(0.38, 0.94, -0.5);
+    // 上端が目線より十分下になる高さ(地平線の先にいる敵をハンドルで隠さない)
+    tilt.position.set(0.38, 0.86, -0.48);
     tilt.rotation.x = -0.35;
-    this.steerWheel = new THREE.Mesh(new THREE.TorusGeometry(0.19, 0.025, 8, 24), new THREE.MeshLambertMaterial({ color: 0x222222 }));
-    this.steerWheel.add(new THREE.Mesh(new THREE.BoxGeometry(0.36, 0.04, 0.02), new THREE.MeshLambertMaterial({ color: 0x444444 })));
+    this.steerWheel = new THREE.Mesh(new THREE.TorusGeometry(0.17, 0.022, 8, 24), new THREE.MeshLambertMaterial({ color: 0x222222 }));
+    this.steerWheel.add(new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.04, 0.02), new THREE.MeshLambertMaterial({ color: 0x444444 })));
     const mark = new THREE.Mesh(new THREE.BoxGeometry(0.03, 0.05, 0.03), new THREE.MeshBasicMaterial({ color: 0xffcc00 }));
-    mark.position.y = 0.19;
+    mark.position.y = 0.17;
     this.steerWheel.add(mark);
     tilt.add(this.steerWheel);
-    this.interior.add(dash, tilt);
+
+    // コックピットでは赤いボンネットの上に暗いカバーを置き、照準のコントラストを保つ
+    const hood = new THREE.Mesh(new THREE.BoxGeometry(1.62, 0.02, 1.35), new THREE.MeshLambertMaterial({ color: 0x24262a }));
+    hood.position.set(0, 0.89, -1.4);
+
+    // 銃と腕。三人称では interior ごと隠れる。
+    const gun = new THREE.Group();
+    const gunMat = new THREE.MeshLambertMaterial({ color: 0x2a2d33 });
+    const gripMat = new THREE.MeshLambertMaterial({ color: 0x4a3528 });
+    const skinMat = new THREE.MeshLambertMaterial({ color: 0xd8a878 });
+    const receiver = new THREE.Mesh(new THREE.BoxGeometry(0.1, 0.12, 0.36), gunMat);
+    const barrel = new THREE.Mesh(new THREE.CylinderGeometry(0.018, 0.018, 0.34, 6).rotateX(Math.PI / 2), gunMat);
+    barrel.position.set(0, 0.03, -0.33);
+    const grip = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.22, 0.11), gripMat);
+    grip.position.set(0, -0.13, 0.08);
+    grip.rotation.x = -0.25;
+    const hand = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.13, 0.2), skinMat);
+    hand.position.set(-0.02, -0.13, 0.02);
+    const support = new THREE.Mesh(new THREE.BoxGeometry(0.11, 0.12, 0.18), skinMat);
+    support.position.set(0.05, -0.08, -0.22);
+    gun.add(receiver, barrel, grip, hand, support);
+    gun.position.set(0.55, 1.06, -0.52);
+    gun.rotation.set(-0.02, -0.04, 0);
+    this.gun = gun;
+    this.muzzle = new THREE.Object3D();
+    this.muzzle.position.set(0, 0.03, -0.5);
+    this.ejectPort = new THREE.Object3D();
+    this.ejectPort.position.set(0.08, 0.04, 0.05);
+    this.flash = new THREE.Mesh(
+      new THREE.SphereGeometry(0.09, 6, 4),
+      new THREE.MeshBasicMaterial({ color: 0xffd070, transparent: true, opacity: 0.95, blending: THREE.AdditiveBlending, depthWrite: false })
+    );
+    this.flash.position.copy(this.muzzle.position);
+    this.flash.visible = false;
+    gun.add(this.muzzle, this.ejectPort, this.flash);
+    this.interior.add(dash, tilt, hood, gun);
 
     this.body.add(chassis, this.exterior, this.interior);
 
@@ -102,12 +150,34 @@ export class Car {
     this.wheelAngle = 0;
     this.chaseYaw = start.yaw;
     this.pos.set(this.phys.x, 0, this.phys.z);
+    this.recoil = this.gunKick = this.muzzleTimer = 0;
+    if (this.flash) this.flash.visible = false;
   }
 
   get yaw() { return this.phys.yaw; }
   get speed() { return this.phys.speed; }
 
   addTrauma(a) { this.trauma = Math.min(1, this.trauma + a); }
+
+  // 発砲の見た目と反動。弾の方向は呼び出し側がカメラから決める。
+  fire() {
+    this.gunKick = Math.min(0.14, this.gunKick + 0.09);
+    this.recoil = Math.min(0.025, this.recoil + 0.012);
+    this.addTrauma(0.05);
+    this.muzzleTimer = 0.05;
+    if (this.flash) {
+      this.flash.visible = true;
+      this.flash.scale.setScalar(0.8 + Math.random() * 0.5);
+    }
+    this.group.updateMatrixWorld(true);
+    const muzzle = this.muzzle.getWorldPosition(new THREE.Vector3());
+    const eject = this.view === 'cockpit' ? this.ejectPort.getWorldPosition(new THREE.Vector3()) : null;
+    const s = Math.sin(this.phys.yaw), c = Math.cos(this.phys.yaw);
+    const shellVel = eject
+      ? new THREE.Vector3(c * 2 + s * 0.5 + (Math.random() - 0.5), 2 + Math.random(), -s * 2 + c * 0.5 + (Math.random() - 0.5))
+      : null;
+    return { muzzle, eject, shellVel };
+  }
 
   toggleView() {
     this.view = this.view === 'cockpit' ? 'chase' : 'cockpit';
@@ -116,6 +186,7 @@ export class Car {
 
   update(dt, input, world) {
     this.handsOff = input.handsOff;
+    this.world = world;
     const p = this.phys;
     p.update(dt, input, world);
     this.pos.set(p.x, 0, p.z);
@@ -209,14 +280,26 @@ export class Car {
       this.camera.updateProjectionMatrix();
     }
 
+    // 発砲後の反動と薬莢・マズルフラッシュの寿命
+    this.recoil *= Math.max(0, 1 - dt * 18);
+    this.gunKick *= Math.max(0, 1 - dt * 16);
+    this.muzzleTimer = Math.max(0, this.muzzleTimer - dt);
+    if (this.flash) this.flash.visible = this.muzzleTimer > 0;
+    if (this.gun) {
+      this.gun.position.z = -0.57 + this.gunKick * 0.22;
+      this.gun.rotation.x = -0.02 + this.gunKick * 1.5;
+    }
+
     const cockpit = this.view === 'cockpit';
     this.exterior.visible = !cockpit;
     this.interior.visible = cockpit;
+    if (this.gunRig) this.gunRig.visible = cockpit;
     if (cockpit) {
       this.group.updateMatrixWorld(true);
       this.head.getWorldPosition(this.camera.position);
       this.head.getWorldQuaternion(this.camera.quaternion);
-      _e.set(this.lookPitch + sPitch, this.lookYaw + sYaw, sRoll);
+      _e.set(this.lookPitch + sPitch + this.recoil, this.lookYaw + sYaw, sRoll);
+      this.gunRig.quaternion.setFromEuler(_e);
     } else {
       // 追従カメラ: 車の向きに少し遅れてついていく
       let d = p.yaw + this.lookYaw - this.chaseYaw;
@@ -224,9 +307,28 @@ export class Car {
       this.chaseYaw += d * Math.min(1, dt * (this.handsOff ? 12 : 3.5));
       const dist = 6.5 + Math.min(2, Math.abs(p.speed) * 0.05);
       const cs = Math.sin(this.chaseYaw), cc = Math.cos(this.chaseYaw);
-      this.camera.position.set(this.pos.x + cs * dist, 2.6 - this.lookPitch * 2, this.pos.z + cc * dist);
+      let camX = this.pos.x + cs * dist, camY = 2.6 - this.lookPitch * 2, camZ = this.pos.z + cc * dist;
+      // 建物や木の後ろにカメラが回り込んだら手前まで寄せる。
+      // 近すぎるときは車の上へ逃がし、車内や壁の中を見せない。
+      if (this.world?.raycast) {
+        const ox = this.pos.x, oy = 1.4, oz = this.pos.z;
+        _camDir.set(camX - ox, camY - oy, camZ - oz);
+        const len = _camDir.length();
+        if (len > 0.01) {
+          _camDir.multiplyScalar(1 / len);
+          const hit = this.world.raycast({ x: ox, y: oy, z: oz }, _camDir, len);
+          if (hit && hit.t < len) {
+            const t = Math.max(0.15, hit.t - 0.35);
+            camX = ox + _camDir.x * t;
+            camY = oy + _camDir.y * t;
+            camZ = oz + _camDir.z * t;
+            if (t < 2.5) camY = Math.max(camY, 3.4);
+          }
+        }
+      }
+      this.camera.position.set(camX, camY, camZ);
       this.camera.lookAt(_v.set(this.pos.x - cs * 5, 1.2 + this.lookPitch * 6, this.pos.z - cc * 5));
-      _e.set(sPitch, sYaw, sRoll);
+      _e.set(sPitch + this.recoil, sYaw, sRoll);
     }
     this.camera.quaternion.multiply(_q.setFromEuler(_e));
     this.camera.position.add(_v.set(sx, sy, 0).applyQuaternion(this.camera.quaternion));

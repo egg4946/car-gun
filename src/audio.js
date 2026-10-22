@@ -186,6 +186,25 @@ export class Sound {
     this.thump(1900, 1400, 0.05, 0.12, 'square');
   }
 
+  // 弾切れで引き金を引いた音
+  dry() {
+    this.burst({ dur: 0.03, freq: 2600, type: 'highpass', vol: 0.1 });
+    this.thump(900, 500, 0.03, 0.05, 'square');
+  }
+
+  // 弾が壁・地面・木に当たる音
+  bulletImpact(surface = 'hard') {
+    const ground = surface === 'ground';
+    const wood = surface === 'wood';
+    this.burst({
+      dur: ground ? 0.08 : 0.06,
+      freq: ground ? 900 : wood ? 1200 : 1800,
+      type: wood ? 'bandpass' : 'lowpass', q: 0.8,
+      vol: ground ? 0.1 : 0.14,
+    });
+    if (!ground) this.thump(wood ? 260 : 420, wood ? 120 : 180, 0.04, 0.05, 'square');
+  }
+
   explosion(vol = 1) {
     this.burst({ dur: 1.2, freq: 2000, sweepTo: 100, vol: 0.9 * vol });
     this.thump(90, 25, 0.7, 0.9 * vol);

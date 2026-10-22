@@ -2,6 +2,8 @@ import * as THREE from 'three';
 
 const MAX_MARKS = 1500;
 const MAX_SMOKE = 48;
+const MAX_HOLES = 180;
+const MAX_SHELLS = 16;
 
 function puffTexture() {
   const c = document.createElement('canvas');
@@ -44,6 +46,63 @@ export class Effects {
     }
     this.smokeIdx = 0;
     this.smokeTimer = 0;
+
+    // 弾痕。壁・地面の法線に合わせて薄い円を貼る。
+    this.holes = new THREE.InstancedMesh(
+      new THREE.CircleGeometry(0.09, 8),
+      new THREE.MeshBasicMaterial({
+        color: 0x141414, transparent: true, opacity: 0.82, depthWrite: false,
+        polygonOffset: true, polygonOffsetFactor: -4,
+      }),
+      MAX_HOLES
+    );
+    this.holes.frustumCulled = false;
+    for (let i = 0; i < MAX_HOLES; i++) this.holes.setMatrixAt(i, zero);
+    this.holes.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+    scene.add(this.holes);
+    this.holeIdx = 0;
+    this.holePos = new THREE.Vector3();
+    this.holeN = new THREE.Vector3();
+    this.holeQ = new THREE.Quaternion();
+    this.holeM = new THREE.Matrix4();
+    this.holeScale = new THREE.Vector3();
+    this.zAxis = new THREE.Vector3(0, 0, 1);
+
+    // 薬莢。撃つたびにコックピット右側から飛ばす。
+    this.shells = [];
+    const shellGeo = new THREE.CylinderGeometry(0.012, 0.012, 0.04, 6);
+    const shellMat = new THREE.MeshLambertMaterial({ color: 0xc8a040 });
+    for (let i = 0; i < MAX_SHELLS; i++) {
+      const mesh = new THREE.Mesh(shellGeo, shellMat);
+      mesh.visible = false;
+      scene.add(mesh);
+      this.shells.push({ mesh, vel: new THREE.Vector3(), spin: new THREE.Vector3(), life: 0, max: 1 });
+    }
+    this.shellIdx = 0;
+  }
+
+  addHole(point, normal) {
+    this.holeN.set(normal?.x ?? 0, normal?.y ?? 1, normal?.z ?? 0);
+    if (this.holeN.lengthSq() < 1e-8) this.holeN.set(0, 1, 0);
+    this.holeN.normalize();
+    this.holeQ.setFromUnitVectors(this.zAxis, this.holeN);
+    this.holePos.copy(point).addScaledVector(this.holeN, 0.012);
+    this.holeScale.setScalar(0.75 + Math.random() * 0.5);
+    this.holeM.compose(this.holePos, this.holeQ, this.holeScale);
+    this.holes.setMatrixAt(this.holeIdx, this.holeM);
+    this.holeIdx = (this.holeIdx + 1) % MAX_HOLES;
+    this.holes.instanceMatrix.needsUpdate = true;
+  }
+
+  ejectShell(pos, vel) {
+    const s = this.shells[this.shellIdx];
+    this.shellIdx = (this.shellIdx + 1) % MAX_SHELLS;
+    s.mesh.position.copy(pos);
+    s.mesh.rotation.set(0, 0, 0);
+    s.mesh.visible = true;
+    s.vel.copy(vel);
+    s.spin.set((Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20, (Math.random() - 0.5) * 20);
+    s.life = s.max = 1.2;
   }
 
   addMark(a, b) {
@@ -86,6 +145,24 @@ export class Effects {
       s.sprite.scale.setScalar(1 + k * 4);
       s.sprite.material.opacity = Math.max(0, (1 - k) * 0.45 * s.strength);
       if (s.life <= 0) s.sprite.visible = false;
+    }
+
+    for (const s of this.shells) {
+      if (s.life <= 0) continue;
+      s.life -= dt;
+      s.vel.y -= 18 * dt;
+      s.mesh.position.addScaledVector(s.vel, dt);
+      s.mesh.rotation.x += s.spin.x * dt;
+      s.mesh.rotation.y += s.spin.y * dt;
+      s.mesh.rotation.z += s.spin.z * dt;
+      if (s.mesh.position.y < 0.03 && s.vel.y < 0) {
+        s.mesh.position.y = 0.03;
+        s.vel.y *= -0.3;
+        s.vel.x *= 0.6;
+        s.vel.z *= 0.6;
+        s.spin.multiplyScalar(0.6);
+      }
+      if (s.life <= 0) s.mesh.visible = false;
     }
   }
 }
