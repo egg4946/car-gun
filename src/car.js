@@ -143,6 +143,7 @@ export class Car {
   reset(start = { x: 0, z: 15, yaw: 0 }) {
     this.phys.reset(start.x, start.z, start.yaw);
     this.lookYaw = this.lookPitch = 0;
+    this.lookHold = 0;
     this.trauma = 0;
     this.fovKick = 0;
     this.time = 0;
@@ -266,8 +267,10 @@ export class Car {
     const sYaw = wobble(t, 3) * shake * 0.05;
     const sRoll = wobble(t, 5) * shake * 0.07 + wobble(t * 2.1, 10) * rumble * 0.01;
 
-    // ハンドルを握っている間は進行方向(滑っている方)を見る
-    if (!this.handsOff) {
+    // ハンドルを握っている間は進行方向(滑っている方)を見る。
+    // ただしマウスを動かした直後は、先に狙いをつけておけるよう戻さない
+    this.lookHold = Math.max(0, this.lookHold - dt);
+    if (!this.handsOff && this.lookHold === 0) {
       const k = Math.min(1, dt * 4);
       const target = this.view === 'cockpit' ? THREE.MathUtils.clamp(p.bodySlip * 0.8, -0.7, 0.7) : 0;
       this.lookYaw += (target - this.lookYaw) * k;
@@ -335,7 +338,8 @@ export class Car {
   }
 
   look(dx, dy) {
-    if (!this.handsOff) return;
+    // 握っている間も視点は動かせる(撃てるのは離している間だけ)
+    if (dx || dy) this.lookHold = 1.2;
     this.lookYaw = Math.max(-2.4, Math.min(2.4, this.lookYaw - dx * 0.0025));
     this.lookPitch = Math.max(-0.7, Math.min(0.7, this.lookPitch - dy * 0.0025));
   }
