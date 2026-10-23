@@ -337,7 +337,7 @@ function collect(p) {
 // ---- チュートリアル(最初の1回だけ) ----
 const HINTS = [
   { text: 'W で加速、A/D で曲がる。Shift でサイドブレーキ', done: () => elapsed > 5 },
-  { text: 'Space を押している間ハンドルを離せる。マウスで狙ってクリックで撃て！', done: () => stats.handsOffTime > 1.5 || kills > 0 },
+  { text: 'マウスで狙いをつけ、Space でハンドルを離してクリックで撃て！', done: () => stats.handsOffTime > 1.5 || kills > 0 },
   { text: 'ハンドルを握ると弾が補充される', done: () => hintTime > 4 },
   { text: 'ドリフトで集中ゲージが溜まる。右クリック長押しでスロー！', done: () => focus.active || hintTime > 8 },
   { text: '光の柱はアイテム。倒すと時間が延びる。暴れるほど手配度★が上がる', done: () => hintTime > 6 },
